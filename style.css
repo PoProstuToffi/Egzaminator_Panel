@@ -196,7 +196,7 @@ h5 {
     color: red;
 }
 
-#changelogButton {
+#settingsButton {
     border-radius: 5px;
     position: fixed;
     top: 50px;
@@ -209,7 +209,7 @@ h5 {
     width: 100px;
 }
 
-#themeToggle:hover, #changelogButton:hover {
+#themeToggle:hover, #settingsButton:hover {
     background-color: #24648f;
     transition: transform 0.3s ease;
 }
