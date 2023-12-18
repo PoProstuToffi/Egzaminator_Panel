@@ -79,7 +79,7 @@ textarea {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     border-radius: 5px;
     resize: vertical;
 }
@@ -180,5 +180,11 @@ body.dark-theme {
     background-color: #004700;
     transition: transform 0.3s ease;
     font-size: 15px;
+}
+
+h5 {
+    font-size: 10px;
+    margin-top: 0px;
+    color: red;
 }
 

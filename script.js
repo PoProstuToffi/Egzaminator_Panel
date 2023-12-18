@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dateStart = document.getElementById("dataRozpoczecia");
     const rank = document.getElementById("listaRozwijana");
     const themeToggle = document.getElementById("themeToggle");
+    const info = document.getElementById("info");
 
     themeToggle.addEventListener("click", toggleTheme);
 
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const duration = endTime - startTime;
             timeDisplay.innerHTML = `Czas rozpoczęcia: ${formatTime(startTime)}<br>Czas zakończenia: ${formatTime(endTime)}<br>Czas trwania: ${formatTimeDifference(duration)}`;
             resultDisplay.innerHTML = `Wynik: ${resultPercentage}%`;
+            info.innerHTML = "<h5>Skopiuj to i wklej na kanał discord <b>#ogłoszenia_ipwoz</b></h5>"
 
             if (resultPercentage >= 80) {
                 verdictDisplay.innerHTML = `:DobryPing: I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU
