@@ -45,6 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return `${formattedHours}:${formattedMinutes}`;
     }
 
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        alert("Przepraszamy, niestety ale ta strona jak narazie nie została przysotoswana do wersji mobilnej. Prosimy śledzić aktualizacji!");
+    }
+
     startButton.addEventListener("click", function () {
         if (!examStarted) {
             if (!userNameInput.value.trim() || !dateStart.value.trim()) {
