@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const rank = document.getElementById("listaRozwijana");
     const themeToggle = document.getElementById("themeToggle");
     const info = document.getElementById("info");
+    const changelogButton = document.getElementById("changelogButton");
 
     themeToggle.addEventListener("click", toggleTheme);
 
@@ -44,6 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const formattedMinutes = String(time.getMinutes()).padStart(2, "0");
         return `${formattedHours}:${formattedMinutes}`;
     }
+
+    changelogButton.addEventListener("click", function() {
+        alert("TYMCZASOWO NIEDOSTĘPNE!");
+    });
 
     startButton.addEventListener("click", function () {
         if (!examStarted) {
