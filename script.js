@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const rank = document.getElementById("listaRozwijana");
     const themeToggle = document.getElementById("themeToggle");
     const info = document.getElementById("info");
-    const changelogButton = document.getElementById("changelogButton");
+    const settingsButton = document.getElementById("settingsButton");
 
     themeToggle.addEventListener("click", toggleTheme);
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return `${formattedHours}:${formattedMinutes}`;
     }
 
-    changelogButton.addEventListener("click", function() {
+    settingsButton.addEventListener("click", function() {
         alert("TYMCZASOWO NIEDOSTĘPNE!");
     });
 
