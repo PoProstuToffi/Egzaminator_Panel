@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+    alert("Witaj na stronie! Przeczytaj poniższe zasady przed rozpoczęciem egzaminu:\n\n1. Wypełnij wszystkie pola formularza oprócz pól z pytaniami, zaznaczasz je na bieżąco podczas trwania egzaminu!\n2. Kliknij 'Rozpocznij egzamin', aby zacząć.\n3. Po zakończeniu egzaminu zobacz werdykt i wklej go na kanał ogłoszeń na discordzie.");
     const startButton = document.getElementById("startButton");
     const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
     const resultDisplay = document.getElementById("result");
+    const timeDisplay = document.getElementById("time");
     const verdictDisplay = document.getElementById("verdict");
     const userNameInput = document.getElementById("idUzytkownika");
     const dateStart = document.getElementById("dataRozpoczecia");
 
     let examStarted = false;
+    let startTime;
+    let endTime;
     let originalButtonColor = getComputedStyle(startButton).backgroundColor;
 
     function getCurrentDate() {
@@ -18,6 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
         return `${day}.${month}.${year}`;
     }
 
+    function formatTimeDifference(duration) {
+        const hours = Math.floor(duration / (60 * 60 * 1000));
+        const minutes = Math.floor((duration % (60 * 60 * 1000)) / (60 * 1000));
+        const seconds = Math.floor((duration % (60 * 1000)) / 1000);
+
+        return `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    }
+
     startButton.addEventListener("click", function () {
         if (!examStarted) {
             if (!userNameInput.value.trim() || !dateStart.value.trim()) {
@@ -25,12 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
+            startTime = new Date();
             startButton.style.backgroundColor = "#e74c3c";
             startButton.innerHTML = "Zakończ egzamin";
             examStarted = true;
         } else {
+            endTime = new Date();
             const checkedCount = Array.from(checkBoxes).filter(checkbox => checkbox.checked).length;
             const resultPercentage = Math.floor((checkedCount / 20) * 100);
+            const duration = endTime - startTime;
+            timeDisplay.innerHTML = timeDisplay.innerHTML = `Czas rozpoczęcia: ${startTime.getHours()}:${startTime.getMinutes()}<br>Czas zakończenia: ${endTime.getHours()}:${endTime.getMinutes()}<br>Czas trwania: ${formatTimeDifference(duration)}`;
             resultDisplay.innerHTML = `Wynik: ${resultPercentage}%`;
 
             if (resultPercentage >= 80) {
