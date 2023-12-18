@@ -67,6 +67,12 @@ input[type="checkbox"] {
     margin-right: 10px;
     flex-shrink: 0;
     word-wrap: break-word;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:hover {
+    background-color: green;
+    border: 2px solid green;
 }
 
 
