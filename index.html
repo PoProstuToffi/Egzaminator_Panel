@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egzamin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            <label for="nazwaUzytkownika">ID użytkownika discorda:</label>
+            <input type="text" id="idUzytkownika" name="idUzytkownika" required>
+
+            <br>
+
+            <label for="dataRozpoczecia">Data rozpoczęcia egzaminu:</label>
+            <input type="date" id="dataRozpoczecia" name="dataRozpoczecia" required>
+
+            <br>
+
+            <label for="czasRozpoczecia">Czas rozpoczęcia egzaminu:</label>
+            <input type="time" id="czasRozpoczecia" name="czasRozpoczecia" required>
+
+            <br>
+
+            <label>Lista zadań do wykonania:</label>
+            <ul>
+                <li>
+                    <input type="checkbox" id="zadanie1" name="zadanie1">
+                    <label for="zadanie1">Zadanie 1</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie2" name="zadanie2">
+                    <label for="zadanie2">Zadanie 2</label>
+                </li>
+            </ul>
+
+            <br>
+
+            <div id="result"></div>
+            <label for="verdict">Werdykt:</label>
+            <textarea id="verdict" readonly></textarea>
+
+            <br>
+
+            <input type="button" id="startButton" value="Rozpocznij egzamin">
+        </form>
+    </div>
+
+</body>
+</html>
