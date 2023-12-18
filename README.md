@@ -1,1 +1,1 @@
-# Strona_SM
+# Panel_Egzaminatora
