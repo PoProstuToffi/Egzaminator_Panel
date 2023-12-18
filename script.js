@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    alert("Witaj na stronie! Przeczytaj poniższe zasady przed rozpoczęciem egzaminu:\n\n1. Wypełnij wszystkie pola formularza oprócz pól z pytaniami, zaznaczasz je na bieżąco podczas trwania egzaminu!\n2. Kliknij 'Rozpocznij egzamin', aby zacząć.\n3.Zaznaczaj na bieżąco ptaszki przy pytaniach jeśli zdane jeśli nie zostaw puste\n4. Po zakończeniu egzaminu zobacz werdykt oraz wklej go na kanał ogłoszeń na discordzie.");
+    alert("Witaj na stronie! Przeczytaj poniższe zasady przed rozpoczęciem egzaminu:\n\n1. Wypełnij wszystkie pola formularza oprócz pól z pytaniami, zaznaczasz je na bieżąco podczas trwania egzaminu!\n2. Kliknij 'Rozpocznij egzamin', aby zacząć.\n3.Zaznaczaj na bieżąco ptaszki przy pytaniach jeśli zdane jeśli nie zostaw puste\n4. Po zakończeniu egzaminu zobacz werdykt oraz wklej go na kanał ogłoszeń na discordzie.\n\n To tyle, powodzenia na egzaminie!");
     const startButton = document.getElementById("startButton");
     const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
     const resultDisplay = document.getElementById("result");
