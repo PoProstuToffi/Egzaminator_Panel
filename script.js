@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    alert("Witaj na stronie! Przeczytaj poniższe zasady przed rozpoczęciem egzaminu:\n\n1. Wypełnij wszystkie pola formularza oprócz pól z pytaniami, zaznaczasz je na bieżąco podczas trwania egzaminu!\n2. Kliknij 'Rozpocznij egzamin', aby zacząć.\n3. Po zakończeniu egzaminu zobacz werdykt i wklej go na kanał ogłoszeń na discordzie.");
+    alert("Witaj na stronie! Przeczytaj poniższe zasady przed rozpoczęciem egzaminu:\n\n1. Wypełnij wszystkie pola formularza oprócz pól z pytaniami, zaznaczasz je na bieżąco podczas trwania egzaminu!\n2. Kliknij 'Rozpocznij egzamin', aby zacząć.\n3.Zaznaczaj na bieżąco ptaszki przy pytaniach jeśli zdane jeśli nie zostaw puste\n4. Po zakończeniu egzaminu zobacz werdykt oraz wklej go na kanał ogłoszeń na discordzie.");
     const startButton = document.getElementById("startButton");
     const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
     const resultDisplay = document.getElementById("result");
@@ -7,6 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const verdictDisplay = document.getElementById("verdict");
     const userNameInput = document.getElementById("idUzytkownika");
     const dateStart = document.getElementById("dataRozpoczecia");
+    const rank = document.getElementById("listaRozwijana");
+    const themeToggle = document.getElementById("themeToggle");
+
+    themeToggle.addEventListener("click", toggleTheme);
+
+    function toggleTheme() {
+        document.body.classList.toggle("dark-theme");
+    }
 
     let examStarted = false;
     let startTime;
@@ -33,13 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
     startButton.addEventListener("click", function () {
         if (!examStarted) {
             if (!userNameInput.value.trim() || !dateStart.value.trim()) {
-                alert("Proszę wypełnić wszystkie pola.");
+                alert("Proszę wypełnić wszystkie pola!");
                 return;
             }
 
             startTime = new Date();
             startButton.style.backgroundColor = "#e74c3c";
-            startButton.innerHTML = "Zakończ egzamin";
+            startButton.value = "Zakończ egzamin";
             examStarted = true;
         } else {
             endTime = new Date();
@@ -54,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 Wraz z dniem ${getCurrentDate()} Egzamin Instytutu Przywództwa zdały poniżej wymienione osoby:
 
-:Aplikant: - <@${userNameInput.value}> - Z wynikiem ${resultPercentage}%
+${rank.value} - <@${userNameInput.value}> - Z wynikiem ${resultPercentage}%
 
 *Po ukończeniu Instytutu Przywództwa proszę zgłosić się na Ticketa po odbiór roli :StAplikant: - Starszego Aplikanta, gratulujemy oraz życzymy dalszych sukcesów w Straży Marszałkowskiej.*`;
             } else {
@@ -62,13 +70,13 @@ Wraz z dniem ${getCurrentDate()} Egzamin Instytutu Przywództwa zdały poniżej 
 
 Wraz z dniem ${getCurrentDate()} Egzamin Instytutu Przywództwa nie zdały poniżej wymienione osoby:
 
-:Aplikant: - <@${userNameInput.value}> - ${resultPercentage}%
+${rank.value} - <@${userNameInput.value}> - ${resultPercentage}%
 
 *Osoby która nie zaliczyła Egzaminu Aplikanckiego musi zgłosić się do obecnie dostępnego Egzaminatora w celu zdania ponownych Szkoleń ( Aplikant ma przeprowadzane szkolenia od Etapu I, do Etapu III )*`;
             }
 
             startButton.style.backgroundColor = originalButtonColor;
-            startButton.innerHTML = "Rozpocznij egzamin";
+            startButton.value = "Rozpocznij egzamin";
             examStarted = false;
         }
     });

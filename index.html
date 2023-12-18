@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
         <form>
             <h1>PANEL EGZAMINATORA</h1>
             <label for="nazwaUzytkownika">ID użytkownika discorda:</label>
-            <input type="text" id="idUzytkownika" name="idUzytkownika" required>
+            <input type="number" id="idUzytkownika" name="idUzytkownika" required>
 
             <br>
 
@@ -25,11 +25,11 @@
 
             <label for="stopień">Stopień:</label>
             <select id="listaRozwijana" name="listaRozwijana">
-                <option value="opcja1">Aplikant</option>
-                <option value="opcja2">St.Aplikant</option>
-                <option value="opcja3">Mł.Strażnik</option>
-                <option value="opcja4">Strażnik</option>
-                <option value="opcja5">St.Strażnik</option>
+                <option value=":Aplikant:">Aplikant</option>
+                <option value=":StAplikant:">St.Aplikant</option>
+                <option value=":MlStranik:">Mł.Strażnik</option>
+                <option value=":Straznik:">Strażnik</option>
+                <option value=":StStraznik:">St.Strażnik</option>
             </select>
 
             <br>
@@ -123,7 +123,7 @@
             <div id="result"></div>
             <div id="time"></div>
             <label for="verdict">Werdykt:</label>
-            <textarea id="verdict" readonly></textarea>
+            <textarea id="verdict" readonly rows="2"></textarea>
 
             <br>
 
@@ -134,6 +134,8 @@
     <footer>
         <p>&copy;2023 <b><a href="https://www.roblox.com/users/1153614761/profile" target="_blank">matix7654</a></b>. Wszelkie prawa zastrzeżone.</p>
     </footer>
+
+    <button id="themeToggle">Zmień motyw</button>
 
 </body>
 </html>
