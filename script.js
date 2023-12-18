@@ -38,6 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
     }
 
+    function formatTime(time) {
+        const formattedHours = String(time.getHours()).padStart(2, "0");
+        const formattedMinutes = String(time.getMinutes()).padStart(2, "0");
+        return `${formattedHours}:${formattedMinutes}`;
+    }
+
     startButton.addEventListener("click", function () {
         if (!examStarted) {
             if (!userNameInput.value.trim() || !dateStart.value.trim()) {
@@ -54,13 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const checkedCount = Array.from(checkBoxes).filter(checkbox => checkbox.checked).length;
             const resultPercentage = Math.floor((checkedCount / 20) * 100);
             const duration = endTime - startTime;
-            timeDisplay.innerHTML = timeDisplay.innerHTML = `Czas rozpoczęcia: ${startTime.getHours()}:${startTime.getMinutes()}<br>Czas zakończenia: ${endTime.getHours()}:${endTime.getMinutes()}<br>Czas trwania: ${formatTimeDifference(duration)}`;
+            timeDisplay.innerHTML = `Czas rozpoczęcia: ${formatTime(startTime)}<br>Czas zakończenia: ${formatTime(endTime)}<br>Czas trwania: ${formatTimeDifference(duration)}`;
             resultDisplay.innerHTML = `Wynik: ${resultPercentage}%`;
 
             if (resultPercentage >= 80) {
                 verdictDisplay.innerHTML = `:DobryPing: I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU
 
-Wraz z dniem ${getCurrentDate()} Egzamin Instytutu Przywództwa zdały poniżej wymienione osoby:
+Wraz z dniem **${getCurrentDate()}** Egzamin Instytutu Przywództwa zdały poniżej wymienione osoby:
 
 ${rank.value} - <@${userNameInput.value}> - Z wynikiem ${resultPercentage}%
 
@@ -68,7 +74,7 @@ ${rank.value} - <@${userNameInput.value}> - Z wynikiem ${resultPercentage}%
             } else {
                 verdictDisplay.innerHTML = `:Odmowa: I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU
 
-Wraz z dniem ${getCurrentDate()} Egzamin Instytutu Przywództwa nie zdały poniżej wymienione osoby:
+Wraz z dniem **${getCurrentDate()}** Egzamin Instytutu Przywództwa nie zdały poniżej wymienione osoby:
 
 ${rank.value} - <@${userNameInput.value}> - ${resultPercentage}%
 
