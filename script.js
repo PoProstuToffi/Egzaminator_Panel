@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const verdictDisplay = document.getElementById("verdict");
     const userNameInput = document.getElementById("idUzytkownika");
     const dateStart = document.getElementById("dataRozpoczecia");
-    const timeStart = document.getElementById("czasRozpoczecia");
 
     let examStarted = false;
     let originalButtonColor = getComputedStyle(startButton).backgroundColor;
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     startButton.addEventListener("click", function () {
         if (!examStarted) {
-            if (!userNameInput.value.trim() || !dateStart.value.trim() || !timeStart.value.trim()) {
+            if (!userNameInput.value.trim() || !dateStart.value.trim()) {
                 alert("Proszę wypełnić wszystkie pola.");
                 return;
             }
@@ -47,9 +46,9 @@ Wraz z dniem ${getCurrentDate()} Egzamin Instytutu Przywództwa zdały poniżej 
 
 Wraz z dniem ${getCurrentDate()} Egzamin Instytutu Przywództwa nie zdały poniżej wymienione osoby:
 
-:Aplikant: - <@${userNameInput.value}> - ${resultPercentage}% ( Próba ściągania podczas egzaminu)
+:Aplikant: - <@${userNameInput.value}> - ${resultPercentage}%
 
-Osoby która nie zaliczyła Egzaminu Aplikanckiego musi zgłosić się do obecnie dostępnego Egzaminatora w celu zdania ponownych Szkoleń ( Aplikant ma przeprowadzane szkolenia od Etapu I, do Etapu III );`;
+*Osoby która nie zaliczyła Egzaminu Aplikanckiego musi zgłosić się do obecnie dostępnego Egzaminatora w celu zdania ponownych Szkoleń ( Aplikant ma przeprowadzane szkolenia od Etapu I, do Etapu III )*`;
             }
 
             startButton.style.backgroundColor = originalButtonColor;

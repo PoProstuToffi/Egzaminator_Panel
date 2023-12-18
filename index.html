@@ -12,30 +12,109 @@
 
     <div class="container">
         <form>
+            <h1>PANEL EGZAMINATORA</h1>
             <label for="nazwaUzytkownika">ID użytkownika discorda:</label>
             <input type="text" id="idUzytkownika" name="idUzytkownika" required>
 
             <br>
 
-            <label for="dataRozpoczecia">Data rozpoczęcia egzaminu:</label>
+            <label for="dataRozpoczecia">Data egzaminu:</label>
             <input type="date" id="dataRozpoczecia" name="dataRozpoczecia" required>
 
             <br>
 
-            <label for="czasRozpoczecia">Czas rozpoczęcia egzaminu:</label>
-            <input type="time" id="czasRozpoczecia" name="czasRozpoczecia" required>
+            <label for="stopień">Stopień:</label>
+            <select id="listaRozwijana" name="listaRozwijana">
+                <option value="opcja1">Aplikant</option>
+                <option value="opcja2">St.Aplikant</option>
+                <option value="opcja3">Mł.Strażnik</option>
+                <option value="opcja4">Strażnik</option>
+                <option value="opcja5">St.Strażnik</option>
+            </select>
 
             <br>
 
-            <label>Lista zadań do wykonania:</label>
-            <ul>
+            <label>Lista pytań na egzamin:</label>
+            <ul id="questionsList">
                 <li>
                     <input type="checkbox" id="zadanie1" name="zadanie1">
-                    <label for="zadanie1">Zadanie 1</label>
+                    <label for="zadanie1">Co to Instytucja Straży Marszałkowskiej, na czym ona polega?</label>
                 </li>
                 <li>
                     <input type="checkbox" id="zadanie2" name="zadanie2">
-                    <label for="zadanie2">Zadanie 2</label>
+                    <label for="zadanie2">Co to ŚPB - Środki Przymusu Bezpośredniego, opisz swoimi zdaniami?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie3" name="zadanie3">
+                    <label for="zadanie3">W jakich momentach możemy zastosować SPB - Środki Przymusu Bezpośredniego, wymień zdarzenia?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie4" name="zadanie4">
+                    <label for="zadanie4">Co możemy zaliczyć do ŚPB - Środki Przymusu Bezpośredniego, wymień przedmioty?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie5" name="zadanie5">
+                    <label for="zadanie5">Wymień zadania oraz obowiązki Funkcjonariusza Straży Marszałkowskiej?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie6" name="zadanie6">
+                    <label for="zadanie6">Wymień Stopnie oraz Korpusy w Straży Marszałkowskiej?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie7" name="zadanie7">
+                    <label for="zadanie7">Kto to jest przełożony?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie8" name="zadanie8">
+                    <label for="zadanie8">Zaprezentuj standardowe formacje jakie przyjmujemy podczas Posiedzeń na Sali Plenarnej?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie9" name="zadanie9">
+                    <label for="zadanie9">Czy możesz zasłaniać Symbole Narodowe jakimi są: Flaga, Godło, Herb?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie10" name="zadanie10">
+                    <label for="zadanie10">Zaprezentuj standardowe formacje jakie przyjmujemy podczas Posiedzeń na Kuluarach - Palarnia Dolna?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie11" name="zadanie11">
+                    <label for="zadanie11">Zaprezentuj standardowe formacje jakie przyjmujemy podczas Służb/Posiedzeń na Sali Kolumnowej?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie12" name="zadanie12">
+                    <label for="zadanie12">Gdzie mogą, a gdzie nie mogą przebywać Funkcjonariusze Straży Marszałkowskiej?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie13" name="zadanie13">
+                    <label for="zadanie13">Jak prawidłowo podejść do Interwencji/Aresztowania, jakie kroki podejmiesz?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie14" name="zadanie14">
+                    <label for="zadanie14">Jak prawidłowo korzystać z taryfikatora oraz wymień najczęstsze artykuły aresztowań?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie15" name="zadanie15">
+                    <label for="zadanie15">Kiedy i czy możemy użyć Broni Palnej w Sejmie?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie16" name="zadanie16">
+                    <label for="zadanie16">Ubierz się w cztery standardowe umundurowania Straży Marszałkowskiej?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie17" name="zadanie17">
+                    <label for="zadanie17">Co zrobisz w sytuacji gdy jakaś osoba podejdzie do ciebie z Tabliczką SM-ZOMO, jakie czynności podejmiesz w takiej sytuacji?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie18" name="zadanie18">
+                    <label for="zadanie18">Co zrobisz jeśli dostałeś informację że na terenie gmachu Sejmu RP znajduje się nożownik? Jakie czynności podejmiesz w tej sytuacji?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie19" name="zadanie19">
+                    <label for="zadanie19">Co zrobisz w momencie gdy podejdzie osoba znajdująca się na terenie sejmu i powie tobie że jakaś osoba ma nóż i przy tym zagraża życie oraz zdrowie osób znajdujących się na terenie Sejmu RP?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="zadanie20" name="zadanie20">
+                    <label for="zadanie20">Co zrobisz jeżeli poseł jest na Sali Plenarnej gdy nie ma posiedzenia, obrania się tym że ma Immunitet, co zrobisz w tym momencie?</label>
                 </li>
             </ul>
 

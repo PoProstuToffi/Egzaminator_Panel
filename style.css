@@ -6,12 +6,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ustawienie na całą wysokość widoku (viewport) */
 }
 
 .container {
-    width: 80%;
+    width: 100%;
     max-width: 600px;
+    margin-top: 20px;
 }
 
 form {
@@ -25,6 +25,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    word-wrap: break-word;
 }
 
 input[type="text"],
@@ -45,7 +46,7 @@ ul {
 li {
     margin-bottom: 10px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 label {
@@ -54,18 +55,21 @@ label {
 
 input[type="checkbox"] {
     appearance: none;
-    width: 20px;
+    min-width: 20px;
     height: 20px;
-    border: 2px solid #3498db;
+    border: 2px solid black;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
     margin-right: 10px;
+    flex-shrink: 0;
+    word-wrap: break-word;
 }
 
+
 input[type="checkbox"]:checked {
-    background-color: #3498db;
-    border: 2px solid #3498db;
+    background-color: green;
+    border: 2px solid green;
 }
 
 textarea {
@@ -88,6 +92,32 @@ input[type="button"] {
     margin: 0 auto;
 }
 
-input[type="button"]:hover {
-    background-color: #2980b9;
+h1 {
+    text-align: center;
+    color: green; 
+    margin-bottom: 20px;
+    word-wrap: break-word;
 }
+
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+select:focus {
+    border: 2px solid green;
+    outline: none;
+}
+
+input[type="date"]:focus {
+    border: 2px solid green;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border: 2px solid green;
+    outline: none;
+}
+
