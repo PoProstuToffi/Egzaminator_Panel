@@ -70,21 +70,21 @@ document.addEventListener("DOMContentLoaded", function () {
             info.innerHTML = "<h5>Skopiuj to i wklej na kanał discord <b>#ogłoszenia_ipwoz</b></h5>"
 
             if (resultPercentage >= 80) {
-                verdictDisplay.innerHTML = `:DobryPing: I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU
+                verdictDisplay.innerHTML = `:DobryPing: **I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU**
 
 Wraz z dniem **${getCurrentDate()}** Egzamin Instytutu Przywództwa zdały poniżej wymienione osoby:
 
-${rank.value} - <@${userNameInput.value}> - Z wynikiem ${resultPercentage}%
+${rank.value} - <@${userNameInput.value}> - Z wynikiem **${resultPercentage}%**
 
-*Po ukończeniu Instytutu Przywództwa proszę zgłosić się na Ticketa po odbiór roli :StAplikant: - Starszego Aplikanta, gratulujemy oraz życzymy dalszych sukcesów w Straży Marszałkowskiej.*`;
+***Po ukończeniu Instytutu Przywództwa proszę zgłosić się na Ticketa po odbiór roli :StAplikant: - Starszego Aplikanta, gratulujemy oraz życzymy dalszych sukcesów w Straży Marszałkowskiej.***`;
             } else {
-                verdictDisplay.innerHTML = `:Odmowa: I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU
+                verdictDisplay.innerHTML = `:Odmowa: **I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU**
 
 Wraz z dniem **${getCurrentDate()}** Egzamin Instytutu Przywództwa nie zdały poniżej wymienione osoby:
 
-${rank.value} - <@${userNameInput.value}> - ${resultPercentage}%
+${rank.value} - <@${userNameInput.value}> - Z wynikiem **${resultPercentage}%**
 
-*Osoby która nie zaliczyła Egzaminu Aplikanckiego musi zgłosić się do obecnie dostępnego Egzaminatora w celu zdania ponownych Szkoleń ( Aplikant ma przeprowadzane szkolenia od Etapu I, do Etapu III )*`;
+***Osoby która nie zaliczyła Egzaminu Aplikanckiego musi zgłosić się do obecnie dostępnego Egzaminatora w celu zdania ponownych Szkoleń ( Aplikant ma przeprowadzane szkolenia od Etapu I, do Etapu III )***`;
             }
 
             startButton.style.backgroundColor = originalButtonColor;
