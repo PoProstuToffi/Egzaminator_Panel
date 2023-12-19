@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const timeDisplay = document.getElementById("time");
     const verdictDisplay = document.getElementById("verdict");
     const userNameInput = document.getElementById("idUzytkownika");
-    const dateStart = document.getElementById("dataRozpoczecia");
     const rank = document.getElementById("listaRozwijana");
     const themeToggle = document.getElementById("themeToggle");
     const info = document.getElementById("info");
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     startButton.addEventListener("click", function () {
         if (!examStarted) {
-            if (!userNameInput.value.trim() || !dateStart.value.trim()) {
+            if (!userNameInput.value.trim()) {
                 alert("Proszę wypełnić wszystkie pola!");
                 return;
             }
