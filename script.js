@@ -7,15 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const verdictDisplay = document.getElementById("verdict");
     const userNameInput = document.getElementById("idUzytkownika");
     const rank = document.getElementById("listaRozwijana");
-    const themeToggle = document.getElementById("themeToggle");
     const info = document.getElementById("info");
     const settingsButton = document.getElementById("settingsButton");
-
-    themeToggle.addEventListener("click", toggleTheme);
-
-    function toggleTheme() {
-        document.body.classList.toggle("dark-theme");
-    }
 
     let examStarted = false;
     let startTime;
