@@ -163,7 +163,7 @@ footer a {
 
 #themeToggle {
     border-radius: 5px;
-    position: fixed;
+    position: absolute;
     top: 65px;
     right: 10px;
     padding: 10px;
@@ -198,7 +198,7 @@ h5 {
 
 #settingsButton {
     border-radius: 5px;
-    position: fixed;
+    position: absolute;
     top: 105px;
     right: 10px;
     padding: 10px;
@@ -218,7 +218,7 @@ h5 {
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     margin: 0;
     padding: 0;
