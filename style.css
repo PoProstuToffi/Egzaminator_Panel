@@ -197,7 +197,6 @@ footer a {
 #startButton:hover {
     background-color: #004700;
     transition: transform 0.3s ease;
-    font-size: 15px;
 }
 
 h5 {
@@ -207,6 +206,7 @@ h5 {
 }
 
 #settingsButton {
+    display: none;
     border-radius: 5px;
     position: absolute;
     top: 65px;
