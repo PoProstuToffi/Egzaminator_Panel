@@ -67,9 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 Wraz z dniem **${getCurrentDate()}** Egzamin Instytutu Przywództwa zdały poniżej wymienione osoby:
 
-${rank.value} - <@${userNameInput.value}> - Z wynikiem **${resultPercentage}%**
-
-***Po ukończeniu Instytutu Przywództwa proszę zgłosić się na Ticketa po odbiór roli :StAplikant: - Starszego Aplikanta, gratulujemy oraz życzymy dalszych sukcesów w Straży Marszałkowskiej.***`;
+${rank.value} - <@${userNameInput.value}> - Z wynikiem **${resultPercentage}%**`;
             } else {
                 verdictDisplay.innerHTML = `:Odmowa: **I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU**
 
