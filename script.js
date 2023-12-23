@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return `${formattedHours}:${formattedMinutes}`;
     }
 
-    settingsButton.addEventListener("click", function() {
+    settingsButton.addEventListener("click", function () {
         alert("TYMCZASOWO NIEDOSTĘPNE!");
     });
 
@@ -54,6 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
             startButton.value = "Zakończ egzamin";
             examStarted = true;
         } else {
+            let messagefinal = "";
+            if (rank.value === ":Aplikant:") {
+                messagefinal = "***Po ukończeniu Instytutu Przywództwa proszę zgłosić się na Ticketa po odbiór roli :StAplikant: - Starszego Aplikanta, gratulujemy oraz życzymy dalszych sukcesów w Straży Marszałkowskiej.***";
+            } else {
+                messagefinal = "";
+            }
+            messagefinal = messagefinal.trim();
             endTime = new Date();
             const checkedCount = Array.from(checkBoxes).filter(checkbox => checkbox.checked).length;
             const resultPercentage = Math.floor((checkedCount / 20) * 100);
@@ -63,13 +70,15 @@ document.addEventListener("DOMContentLoaded", function () {
             info.innerHTML = "<h5>Skopiuj to i wklej na kanał discord <b>#ogłoszenia_ipwoz</b></h5>"
 
             if (resultPercentage >= 80) {
-                verdictDisplay.innerHTML = `:DobryPing: **I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU**
+                let verdictText = `:DobryPing: **I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU**
 
 Wraz z dniem **${getCurrentDate()}** Egzamin Instytutu Przywództwa zdały poniżej wymienione osoby:
 
 ${rank.value} - <@${userNameInput.value}> - Z wynikiem **${resultPercentage}%**
 
-***Po ukończeniu Instytutu Przywództwa proszę zgłosić się na Ticketa po odbiór roli :StAplikant: - Starszego Aplikanta, gratulujemy oraz życzymy dalszych sukcesów w Straży Marszałkowskiej.***`;
+${messagefinal}`;
+                verdictText = verdictText.trim();
+                verdictDisplay.innerHTML = verdictText;
             } else {
                 verdictDisplay.innerHTML = `:Odmowa: **I INSTYTUT PRZYWÓDZTWA - WYNIKI EGZAMINU**
 
