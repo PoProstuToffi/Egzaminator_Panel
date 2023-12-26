@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const verdictDisplay = document.getElementById("verdict");
     const userNameInput = document.getElementById("idUzytkownika");
     const rank = document.getElementById("listaRozwijana");
+    const attempt = document.getElementById("próbaLista");
     const info = document.getElementById("info");
     const settingsButton = document.getElementById("settingsButton");
     const settingsPanel = document.getElementById("settingsPanel");
@@ -68,6 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
             examStarted = true;
         } else {
             let messagefinal = "";
+            let lostmessagefinal = "";
+            if (attempt.value === "1") {
+                lostmessagefinal = "***Osoba która nie zaliczyła Egzaminu Aplikanckiego musi zgłosić się do obecnie dostępnego Egzaminatora w celu zdania ponownych Szkoleń ( Aplikant ma przeprowadzane szkolenia od Etapu I, do Etapu III )***";
+            }else {
+                lostmessagefinal = "***Osoba nie zaliczyła Egzaminu Aplikanckiego 2 raz co równa się z jego wydaleniem w przeciągu 24h***";
+            }
             if (rank.value === ":Aplikant:") {
                 messagefinal = "***Po ukończeniu Instytutu Przywództwa proszę zgłosić się na Ticketa po odbiór roli :StAplikant: - Starszego Aplikanta, gratulujemy oraz życzymy dalszych sukcesów w Straży Marszałkowskiej.***";
             } else {
@@ -99,7 +106,7 @@ Wraz z dniem **${getCurrentDate()}** Egzamin Instytutu Przywództwa nie zdały p
 
 ${rank.value} - <@${userNameInput.value}> - Z wynikiem **${resultPercentage}%**
 
-***Osoby która nie zaliczyła Egzaminu Aplikanckiego musi zgłosić się do obecnie dostępnego Egzaminatora w celu zdania ponownych Szkoleń ( Aplikant ma przeprowadzane szkolenia od Etapu I, do Etapu III )***`;
+${lostmessagefinal}`;
             }
 
             startButton.style.backgroundColor = originalButtonColor;
