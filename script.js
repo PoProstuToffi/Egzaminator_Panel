@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const rank = document.getElementById("listaRozwijana");
     const info = document.getElementById("info");
     const settingsButton = document.getElementById("settingsButton");
+    const settingsPanel = document.getElementById("settingsPanel");
+    const closeButton = document.getElementById("closeButton");
 
     let examStarted = false;
     let startTime;
@@ -38,8 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
         return `${formattedHours}:${formattedMinutes}`;
     }
 
+    let isPanelOpen = false;
+
     settingsButton.addEventListener("click", function () {
-        alert("TYMCZASOWO NIEDOSTĘPNE!");
+        isPanelOpen = !isPanelOpen;
+        if (isPanelOpen) {
+            settingsPanel.style.display = "flex";
+        } else {
+            settingsPanel.style.display = "none";
+        }
+    });
+
+    closeButton.addEventListener("click", function () {
+        settingsPanel.style.display = "none";
     });
 
     startButton.addEventListener("click", function () {
