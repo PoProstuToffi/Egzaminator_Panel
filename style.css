@@ -446,14 +446,12 @@ table {
 
 thead {
     background-color: #3498db;
-    color: #fff;
-    width: 250px;
+    color: white;
 }
 
 th, td {
-    padding: 10px;
-    text-align: left;
-    border: 2px solid #ddd;
+    text-align: center;
+    border: 1px solid white;
 }
 
 .centered-cell {
