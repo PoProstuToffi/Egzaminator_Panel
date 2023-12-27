@@ -12,11 +12,67 @@ document.addEventListener("DOMContentLoaded", function () {
     const settingsButton = document.getElementById("settingsButton");
     const settingsPanel = document.getElementById("settingsPanel");
     const closeButton = document.getElementById("closeButton");
+    const usersList = document.getElementById("userList");
+    usersList.style.display = "none";
 
     let examStarted = false;
     let startTime;
     let endTime;
     let originalButtonColor = getComputedStyle(startButton).backgroundColor;
+
+    var tabelaWynikowaBody = document.querySelector('#userList table tbody');
+
+    userNameInput.addEventListener('input', function () {
+        var idDoWyszukania = this.value;
+
+        if (idDoWyszukania.trim() === '') {
+            usersList.style.display = "none";
+            return;
+        }
+        usersList.style.display = "";
+
+        fetch('users.json')
+            .then(response => response.json())
+            .then(data => {
+                var znalezieniUzytkownicy = [];
+
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].discordId === idDoWyszukania) {
+                        znalezieniUzytkownicy.push(data[i]);
+                    }
+                }
+
+                if (znalezieniUzytkownicy.length > 0) {
+                    wyswietlInformacjeOUzytkownikach(znalezieniUzytkownicy);
+                } else {
+                    wyswietlBrakInformacji();
+                }
+            })
+            .catch(error => console.error('Błąd ładowania danych:', error));
+    });
+
+    function wyswietlInformacjeOUzytkownikach(uzytkownicy) {
+        tabelaWynikowaBody.innerHTML = '';
+
+        for (var i = 0; i < uzytkownicy.length; i++) {
+            var row = tabelaWynikowaBody.insertRow();
+            var cellId = row.insertCell(0);
+            var cellDiscordNick = row.insertCell(1);
+            var cellRobloxNick = row.insertCell(2);
+            var cellRank = row.insertCell(3);
+            var cellAttempts = row.insertCell(4);
+
+            cellId.textContent = uzytkownicy[i].discordId;
+            cellDiscordNick.textContent = uzytkownicy[i].discordNick;
+            cellRobloxNick.textContent = uzytkownicy[i].robloxNick;
+            cellRank.textContent = uzytkownicy[i].rank;
+            cellAttempts.textContent = uzytkownicy[i].attempts;
+        }
+    }
+
+    function wyswietlBrakInformacji() {
+        tabelaWynikowaBody.innerHTML = '<tr><td colspan="5" class="centered-cell">Nie znaleziono użytkownika o podanym ID.</td></tr>';
+    }
 
     function getCurrentDate() {
         const today = new Date();

@@ -433,4 +433,33 @@ h5 {
     overflow-y: auto;
 }
 
+#userList h2 {
+    margin: 0;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+thead {
+    background-color: #3498db;
+    color: #fff;
+    width: 250px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 2px solid #ddd;
+}
+
+.centered-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
 
